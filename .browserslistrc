@@ -1,0 +1,6 @@
+# This file follows the Browserlist format, for details see https://github.com/ai/browserslist
+IE >= 11
+Safari >= 9
+last 2 Firefox versions
+last 4 Chrome versions
+last 2 Edge versions

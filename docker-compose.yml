@@ -1,0 +1,19 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - GRAPHQL_HOST=graphql
+      - GRAPHQL_PORT=8001
+  graphql:
+    build: ../release-status-graphql
+    ports:
+      - "8001:8001"
+    volumes:
+      - ${CONFIG_FILE}:/src/config/default.json
+    links:
+      - redis
+  redis:
+    image: redis
