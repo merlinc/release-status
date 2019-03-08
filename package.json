@@ -10,6 +10,9 @@
     "start": "next start",
     "test": "jest"
   },
+  "engines": {
+    "node": "10"
+  },
   "author": "",
   "dependencies": {
     "@octokit/rest": "^15.18.1",
