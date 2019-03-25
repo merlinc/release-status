@@ -1,7 +1,7 @@
-const ReleaseStatus = require("./release-status");
+const React = require("react");
 const _ = require("lodash");
 
-class Ticket extends ReleaseStatus {
+class Ticket extends React.Component {
   commits() {
     return _.uniq(
       _.map(this.props.ticket.commits, commit => {

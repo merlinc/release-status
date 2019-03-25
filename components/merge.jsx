@@ -1,13 +1,13 @@
 "use strict";
 
 const React = require("react");
-const ReleaseStatus = require("./release-status");
+const utils = require('../lib/release-status-utils');
 
-class Merge extends ReleaseStatus {
+class Merge extends React.Component {
   render() {
     let style = {
-      top: this.Y(this.props.top),
-      left: this.X(this.props.left)
+      top: utils.calcY(this.props.top),
+      left: utils.calcX(this.props.left)
     };
 
     const mergeId = this.props.merge.mergeId
