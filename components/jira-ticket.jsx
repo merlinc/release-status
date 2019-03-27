@@ -8,22 +8,16 @@ class JiraTicket extends Ticket {
     let ticket = this.props.ticket;
     let parent = ticket.parent;
 
-    let title =
-      ticket.id +
-      "\n\n" +
-      ticket.title +
-      "\n\n" +
-      "[" +
-      ticket.status +
-      "]\n\n" +
-      this.commits().join("\n\n");
+    let title = `${ticket.id}\n\n${ticket.title}\n\n[${
+      ticket.status
+    }]\n\n${this.commits().join("\n\n")}`;
 
     let parentTitle;
-    if (parent) {
-      title = "[" + parent.key + "] " + title;
 
-      parentTitle =
-        parent.key + "\n\n" + parent.title + "\n\n" + "[" + parent.status + "]";
+    if (parent) {
+      title = `[${parent.key}] ${title}`;
+
+      parentTitle = `${parent.key}\n\n${parent.title}\n\n[${parent.status}]`;
     }
 
     return (
@@ -38,10 +32,10 @@ class JiraTicket extends Ticket {
           </a>
           {parent ? (
             <span
-              className={"parent " + this.className(parent)}
+              className={`parent ${this.className(parent)}`}
               title={parentTitle}
             >
-              <a target={"ticket-" + parent.key} href={parent.link}>
+              <a target={`ticket-${parent.key}`} href={parent.link}>
                 {parent.key}
               </a>
             </span>

@@ -1,10 +1,9 @@
 "use strict";
 
 const React = require("react");
-const ReleaseStatus = require("./release-status");
 const Merge = require("./merge");
 
-class Merges extends ReleaseStatus {
+class Merges extends React.Component {
   render() {
     return (
       <div>

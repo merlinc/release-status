@@ -1,25 +1,14 @@
 "use strict";
 
 const React = require("react");
-const ReleaseStatus = require("./release-status");
 const Build = require("./build");
+const utils = require('../lib/release-status-utils');
 
-class Release extends ReleaseStatus {
+class Release extends React.Component {
   render() {
     let style = {
-      top: this.Y(this.props.top)
+      top: utils.calcY(this.props.top)
     };
-
-    console.log(this.props.release.builds);
-
-    let name =
-      this.props.release.message === "HEAD"
-        ? "HEAD"
-        : "⚙ " + this.props.release.message; //.substr(0, 8);
-
-    let shortHash = this.props.release.sha.substr(0, 8);
-
-    let shortMessage = this.props.release.message.substr(0, 80);
 
     return (
       <div
@@ -31,9 +20,9 @@ class Release extends ReleaseStatus {
           title={this.props.release.ids && this.props.release.ids.join(" ")}
           href={this.props.release.url}
         >
-          ⚙ {shortHash}
+          ⚙ {utils.shortHash(this.props.release.sha)}
         </a>
-        <span> {shortMessage} </span>
+        <span> {utils.shortMessage(this.props.release.message)} </span>
         <div style={{ display: "none" }}>{this.props.release.message}</div>
         <span className="date">{this.props.release.date}</span>
 

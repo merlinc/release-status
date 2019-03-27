@@ -1,9 +1,8 @@
 "use strict";
 
 const React = require("react");
-const Releasestatus = require("./release-status");
 
-class PromoteLink extends Releasestatus {
+class PromoteLink extends React.Component {
   render() {
     return (
       <div className={"promote env " + this.props.env}>

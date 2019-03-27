@@ -18,7 +18,6 @@ class Main extends React.Component {
 
     this.props.status.releases = [];
 
-    // console.log(this.props.status.commits);
     return (
       <div>
         <a className="header" href="/">

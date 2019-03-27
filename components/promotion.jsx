@@ -1,9 +1,11 @@
 "use strict";
 
 const React = require("react");
-const ReleaseStatus = require("./release-status");
+const utils = require('../lib/release-status-utils');
 
-class Promotion extends ReleaseStatus {
+
+class Promotion extends React.Component {
+
   render() {
     return (
       <a
@@ -14,7 +16,7 @@ class Promotion extends ReleaseStatus {
           this.props.promotion.env +
           (this.props.promotion.rough ? " rough" : "")
         }
-        title={this.formatDate(this.props.promotion.timestamp)}
+        title={utils.formatDate(this.props.promotion.timestamp)}
       >
         {this.props.promotion.env}
       </a>
