@@ -1,11 +1,7 @@
-"use strict";
-
-const React = require("react");
-const utils = require('../lib/release-status-utils');
-
+import React from "react";
+const utils = require("../lib/release-status-utils");
 
 class Promotion extends React.Component {
-
   render() {
     return (
       <a
@@ -24,4 +20,4 @@ class Promotion extends React.Component {
   }
 }
 
-module.exports = Promotion;
+export default Promotion;

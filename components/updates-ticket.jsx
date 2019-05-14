@@ -1,8 +1,6 @@
-"use strict";
-
-const React = require("react");
-const Ticket = require("./ticket");
-const Update = require("./update");
+import React from "react";
+import Ticket from "./ticket";
+import Update from "./update";
 
 class UpdatesTicket extends Ticket {
   render() {
@@ -16,4 +14,4 @@ class UpdatesTicket extends Ticket {
   }
 }
 
-module.exports = UpdatesTicket;
+export default UpdatesTicket;

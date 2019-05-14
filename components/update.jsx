@@ -1,13 +1,17 @@
-"use strict";
-
-const React = require("react");
+import React from "react";
 
 class Update extends React.Component {
   render() {
+    if (!this.props.update) {
+      return null;
+    }
+
     return (
       <a
         className="update"
-        href={`/${this.props.update.module}#release-${this.props.update.version}`}
+        href={`/${this.props.update.module}#release-${
+          this.props.update.version
+        }`}
         target={`module-${this.props.update.module}`}
       >
         ⟰ {this.props.update.module} {this.props.update.version}
@@ -16,4 +20,4 @@ class Update extends React.Component {
   }
 }
 
-module.exports = Update;
+export default Update;

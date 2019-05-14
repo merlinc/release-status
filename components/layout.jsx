@@ -1,6 +1,4 @@
-"use strict";
-
-const React = require("react");
+import React from "react";
 
 class Layout extends React.Component {
   render() {
@@ -16,4 +14,4 @@ class Layout extends React.Component {
   }
 }
 
-module.exports = Layout;
+export default Layout;

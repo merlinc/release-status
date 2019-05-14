@@ -1,14 +1,18 @@
-"use strict";
-
-const React = require("react");
-const Build = require("./build");
-const utils = require('../lib/release-status-utils');
+import React from "react";
+import Build from "./build";
+import utils from "../lib/release-status-utils";
 
 class Release extends React.Component {
   render() {
     let style = {
       top: utils.calcY(this.props.top)
     };
+
+    if (!this.props.release) {
+      return null;
+    }
+
+    console.log(this.props.release);
 
     return (
       <div
@@ -22,25 +26,32 @@ class Release extends React.Component {
         >
           ⚙ {utils.shortHash(this.props.release.sha)}
         </a>
+
         <span> {utils.shortMessage(this.props.release.message)} </span>
         <div style={{ display: "none" }}>{this.props.release.message}</div>
         <span className="date">{this.props.release.date}</span>
 
-        <Build promotions={this.props.release.promotions} />
-
+        {/* New style batched builds with promotions*/}
         {this.props.release.builds &&
           this.props.release.builds.map((build, index) => {
             return (
               <Build
                 key={build.buildId}
                 build={build}
-                promotions={this.props.release.promotions}
+                promotions={this.props.release.promotions.filter(
+                  promotion => promotion.buildId === build.buildId
+                )}
               />
             );
           })}
+
+        {/*  Old Style "all builds" as promotions */}
+        {this.props.release.promotions && (
+          <Build promotions={this.props.release.promotions} />
+        )}
       </div>
     );
   }
 }
 
-module.exports = Release;
+export default Release;

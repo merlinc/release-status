@@ -1,7 +1,5 @@
-"use strict";
-
-const React = require("react");
-const utils = require('../lib/release-status-utils');
+import React from "react";
+const utils = require("../lib/release-status-utils");
 
 class Merge extends React.Component {
   render() {
@@ -10,19 +8,21 @@ class Merge extends React.Component {
       left: utils.calcX(this.props.left)
     };
 
-    const mergeId = this.props.merge.mergeId
-      ? this.props.merge.mergeId
-      : this.props.merge.id;
+    const mergeId =
+      this.props.merge &&
+      (this.props.merge.mergeId
+        ? this.props.merge.mergeId
+        : this.props.merge.id);
     return (
       <a
         className="merge"
         style={style}
         target={`merge-${mergeId}`}
-        href={this.props.merge.link}
+        href={this.props.merge && this.props.merge.link}
         title={`Merge ${mergeId}`}
       />
     );
   }
 }
 
-module.exports = Merge;
+export default Merge;

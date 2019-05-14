@@ -3,7 +3,7 @@ services:
   web:
     build: .
     ports:
-      - "3000:3000"
+      - "9000:9000"
     environment:
       - GRAPHQL_HOST=graphql
       - GRAPHQL_PORT=8001

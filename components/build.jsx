@@ -1,10 +1,8 @@
-"use strict";
-
-const React = require("react");
-const Promotion = require("./promotion");
-const PromoteLink = require("./promote-link");
+import React from "react";
+import Promotion from "./promotion";
+import PromoteLink from "./promote-link";
 const _ = require("lodash");
-const utils = require("../lib/release-status-utils");
+import utils from "../lib/release-status-utils";
 
 class Build extends React.Component {
   render() {
@@ -12,12 +10,17 @@ class Build extends React.Component {
 
     return (
       <div id={"build-"} className={"build " + resultClass}>
-        {this.props.promotions.map((promotion, index) => {
-          return <Promotion key={index} promotion={promotion} />;
-        })}
+        {this.props.build && this.props.build.promoteLink && (
+          <PromoteLink env="prd" link={this.props.build.promoteLink} />
+        )}
+
+        {this.props.promotions &&
+          this.props.promotions.map((promotion, index) => {
+            return <Promotion key={index} promotion={promotion} />;
+          })}
       </div>
     );
   }
 }
 
-module.exports = Build;
+export default Build;
