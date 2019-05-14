@@ -1,6 +1,4 @@
-"use strict";
-
-const React = require("react");
+import React from "react";
 
 class MoreLink extends React.Component {
   render() {
@@ -12,4 +10,4 @@ class MoreLink extends React.Component {
   }
 }
 
-module.exports = MoreLink;
+export default MoreLink;

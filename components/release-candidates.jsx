@@ -1,10 +1,12 @@
-"use strict";
+import React from "react";
+import ReleaseCandidate from "./release-candidate";
 
-const React = require("react");
-const Release = require("./release");
-
-class Releases extends React.Component {
+class ReleaseCandidates extends React.Component {
   render() {
+    if (!this.props.releases) {
+      return null;
+    }
+
     return (
       <div className="releases">
         {this.props.releases.map((release, index) => {
@@ -16,11 +18,13 @@ class Releases extends React.Component {
           //     return buildIds.includes(promotion.buildId.toString())
           // });
 
-          return <Release key={release.sha} release={release} top={index} />;
+          return (
+            <ReleaseCandidate key={release.sha} release={release} top={index} />
+          );
         })}
       </div>
     );
   }
 }
 
-module.exports = Releases;
+export default ReleaseCandidates;

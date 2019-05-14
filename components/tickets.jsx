@@ -1,9 +1,9 @@
-const React = require("react");
+import React from "react";
 const _ = require("lodash");
-const Merges = require("./merges");
-const JiraTicket = require("./jira-ticket");
-const CommitTicket = require("./commit-ticket");
-const UpdatesTicket = require("./updates-ticket");
+import Merges from "./merges";
+import JiraTicket from "./jira-ticket";
+import CommitTicket from "./commit-ticket";
+import UpdatesTicket from "./updates-ticket";
 
 class Tickets extends React.Component {
   areCellsAvailable(cells, x, y, yLast) {
@@ -36,11 +36,15 @@ class Tickets extends React.Component {
   }
 
   getTop(ticket) {
-    return this.props.releaseIndexes[_.first(ticket.releases)] || 0;
+    return _.findIndex(this.props.commits, {
+      sha: _.get(_.first(ticket.merges), "mergeId") || 0
+    });
   }
 
   getBottom(ticket) {
-    return this.props.releaseIndexes[_.last(ticket.releases)] || 0;
+    return _.findIndex(this.props.commits, {
+      sha: _.get(_.last(ticket.merges), "mergeId") || 0
+    });
   }
 
   getHeight(ticket) {
@@ -78,27 +82,27 @@ class Tickets extends React.Component {
               />
               <Merges
                 merges={ticket.merges}
+                commits={this.props.commits}
                 left={left}
-                releaseIndexes={this.props.releaseIndexes}
               />
             </div>
           );
         })}
-        {this.props.updates.map(update => {
-          const left = this.lastCellInRow(cells, update.top);
-          return (
-            <UpdatesTicket
-              key={update.releaseId}
-              updates={update.updates}
-              top={update.top}
-              bottom={update.top}
-              left={left}
-            />
-          );
-        })}
+        {/*{this.props.updates.map(update => {*/}
+        {/*  const left = this.lastCellInRow(cells, update.top);*/}
+        {/*  return (*/}
+        {/*    <UpdatesTicket*/}
+        {/*      key={update.releaseId}*/}
+        {/*      updates={update.updates}*/}
+        {/*      top={update.top}*/}
+        {/*      bottom={update.top}*/}
+        {/*      left={left}*/}
+        {/*    />*/}
+        {/*  );*/}
+        {/*})}*/}
       </div>
     );
   }
 }
 
-module.exports = Tickets;
+export default Tickets;

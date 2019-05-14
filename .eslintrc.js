@@ -15,7 +15,13 @@ module.exports = {
   rules: {
     "react/prop-types": "off",
     "react/display-name": "off",
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: [".storybook/**", "stories/**"]
+      }
+    ]
   },
   parser: "babel-eslint",
   // "parser": "esprima",

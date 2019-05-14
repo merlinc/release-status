@@ -1,7 +1,6 @@
-"use strict";
-
-const React = require("react");
-const Ticket = require("./ticket");
+import React from "react";
+import Ticket from "./ticket";
+import Team from "./team";
 
 class JiraTicket extends Ticket {
   render() {
@@ -26,6 +25,7 @@ class JiraTicket extends Ticket {
         style={this.buildStyle()}
         title={title}
       >
+        { this.props.team && <Team team={this.props.team}/> }
         <p>
           <a target={"ticket-" + ticket.id} href={ticket.link}>
             {ticket.id}
@@ -48,4 +48,4 @@ class JiraTicket extends Ticket {
   }
 }
 
-module.exports = JiraTicket;
+export default JiraTicket;

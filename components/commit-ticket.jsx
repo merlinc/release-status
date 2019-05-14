@@ -1,7 +1,6 @@
-"use strict";
-
-const React = require("react");
-const Ticket = require("./ticket");
+import React from "react";
+import Ticket from "./ticket";
+import Team from "./team";
 
 class CommitTicket extends Ticket {
   render() {
@@ -9,10 +8,10 @@ class CommitTicket extends Ticket {
 
     return (
       <div className="ticket nojira" style={this.buildStyle()} title={title}>
-        <span>⚐ {this.props.ticket.title}</span>
+        <span>⚐ {this.props.ticket.title}</span>{ this.props.team && <Team team={this.props.team}/> }
       </div>
     );
   }
 }
 
-module.exports = CommitTicket;
+export default CommitTicket;

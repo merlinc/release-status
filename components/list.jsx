@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-const React = require("react");
-const { graphql } = require("react-apollo");
+import React from "react";
+const { graphql, Query } = require("react-apollo");
 const { compose } = require("recompose");
-const gql = require("graphql-tag");
+import gql from "graphql-tag";
 
-const Layout = require("./layout");
+import Layout from "./layout";
 
 const displayLink = project => {
   const url = `/project?org=${project.org}&project=${project.project}`;
@@ -22,36 +22,39 @@ const displayLink = project => {
 };
 class List extends React.Component {
   render() {
+    const projectConfig = gql`
+      {
+        list {
+          org
+          project
+          type
+          git {
+            baseUrl
+            commitUrl
+            compareUrl
+          }
+        }
+      }
+    `;
+
     return (
-      <Layout title="Project List">
-        <div>
-          <p className="header">Project List</p>
-        </div>
-        <ul className="projects">{this.props.list.map(displayLink)}</ul>
-      </Layout>
+      <Query query={projectConfig}>
+        {({ loading, error, data }) => {
+          if (loading) return "Loading...";
+          if (error) return `Error! ${error.message}`;
+
+          return (
+            <Layout title="Project List">
+              <div>
+                <p className="header">Project List</p>
+              </div>
+              <ul className="projects">{data.list.map(displayLink)}</ul>
+            </Layout>
+          );
+        }}
+      </Query>
     );
   }
 }
 
-const projectConfig = gql`
-  query list {
-    list {
-      org
-      project
-      type
-      git {
-        baseUrl
-        commitUrl
-        compareUrl
-      }
-    }
-  }
-`;
-
-export default compose(
-  graphql(projectConfig, {
-    props: ({ data }) => {
-      return data;
-    }
-  })
-)(List);
+export default List;

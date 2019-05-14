@@ -159,7 +159,7 @@ a.update {
 .tickets {
   position: absolute;
   top: 0px;
-  left: 170px;
+  left: 135px;
   right: 100px;
 }
 
@@ -220,4 +220,18 @@ a.update {
 }
 a.merge:hover {
   border-right-color: #f44;
+}
+
+.team {
+  display: inline;
+  float: right;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 1px 5px 1px 5px;
+  border: solid 2px;
+  margin-top: -3px;
+  margin-left: -3px;
+  margin-right: 5px;
+  color: #999;
+  border-color: #999;
 }

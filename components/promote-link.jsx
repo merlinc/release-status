@@ -1,6 +1,4 @@
-"use strict";
-
-const React = require("react");
+import React from "react";
 
 class PromoteLink extends React.Component {
   render() {
@@ -14,4 +12,4 @@ class PromoteLink extends React.Component {
   }
 }
 
-module.exports = PromoteLink;
+export default PromoteLink;

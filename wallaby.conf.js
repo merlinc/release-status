@@ -2,12 +2,12 @@
 
 module.exports = wallaby => ({
   files: [
-    "index.js",
+    "button.stories.js.js.js",
     "@(components|pages|static)/**/*.js?(x)",
     "!(components|pages|static)/**/*.spec.js",
     "!node_modules/**"
   ],
-  tests: ["index.spec.js", "**/*.spec.js", "!node_modules/**"],
+  tests: ["button.stories.js.js.spec.js", "**/*.spec.js", "!node_modules/**"],
   env: {
     type: "node",
     runner: "node",

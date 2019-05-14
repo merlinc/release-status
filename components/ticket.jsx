@@ -1,5 +1,6 @@
-const React = require("react");
+import React from "react";
 const _ = require("lodash");
+import utils from "../lib/release-status-utils";
 
 class Ticket extends React.Component {
   commits() {
@@ -11,7 +12,7 @@ class Ticket extends React.Component {
           "- " +
           commit.author +
           " - " +
-          this.formatDate(commit.date)
+          utils.formatDate(commit.date)
         );
       })
     );
@@ -23,7 +24,9 @@ class Ticket extends React.Component {
     let classNames = {
       ready: "ready",
       closed: "closed",
-      develop: "develop"
+      develop: "develop",
+      review: "review",
+      test: "test"
     };
 
     return classNames[ticket.status] || "unknown";
@@ -31,13 +34,16 @@ class Ticket extends React.Component {
 
   buildStyle() {
     let height =
-      Math.max(this.Y(this.props.bottom) - this.Y(this.props.top), 0) + 12;
+      Math.max(
+        utils.calcY(this.props.bottom) - utils.calcY(this.props.top),
+        0
+      ) + 12;
     return {
-      top: this.Y(this.props.top),
-      left: this.X(this.props.left),
+      top: utils.calcY(this.props.top),
+      left: utils.calcX(this.props.left),
       height
     };
   }
 }
 
-module.exports = Ticket;
+export default Ticket;
