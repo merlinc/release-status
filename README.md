@@ -8,6 +8,16 @@ It is an reworking of [UKHomeOffice/passport-ticket-status](https://github.com/U
 
 This particular repository is the SSR frontend.
 
+## Example screenshots
+
+### Without ticket information
+
+![without-tickets](https://user-images.githubusercontent.com/196695/57960002-600cf900-78fe-11e9-9e2a-c4e9c02f2cee.png)
+
+### With linked ticket information
+
+![tickets](https://user-images.githubusercontent.com/196695/57960001-5f746280-78fe-11e9-9366-548b66ec35b1.png)
+
 ## Quality Metrics
 
 ### Codescene
