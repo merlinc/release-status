@@ -35,21 +35,15 @@ export const projectStatus = gql`
 
 class Main extends React.Component {
   render() {
-    console.log("Render Main");
-
-    console.log(JSON.stringify(this.props, null, 2));
-
     return (
       <Query
         query={projectStatus}
         variables={{ org: this.props.org, project: this.props.project }}
       >
         {({ loading, error, data }) => {
-          console.log(loading, error, data);
           if (loading) return "Loading...";
           if (error) return `Error! ${error.message}`;
 
-          console.log(`data: ${JSON.stringify(data, null, 2)}`);
           return (
             <div>
               <a className="header" href="/">
