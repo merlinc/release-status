@@ -7,8 +7,10 @@
   "scripts": {
     "dev": "next -p 9000",
     "build": "next build",
+    "lint": "eslint .",
     "start": "next start -p 9000",
     "test": "jest --passWithNoTests",
+    "test:coverage": "jest --passWithNoTests --coverage",
     "storybook": "start-storybook -s ./static"
   },
   "engines": {
@@ -65,5 +67,18 @@
       "pre-commit": "pretty-quick --staged && eslint --max-warnings 0 .",
       "pre-push": "jest --passWithNoTests"
     }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/*.spec.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "**/node_modules/**",
+      "coverage/**",
+      "**/vendor/**",
+      "*.conf.js",
+      ".storybook/**"
+    ]
   }
 }

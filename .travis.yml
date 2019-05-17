@@ -7,3 +7,18 @@ install:
 
 script:
   - npm test
+
+jobs:
+  include:
+    - stage: "Build"
+      script: npm install
+
+    - stage: "Test"
+      name: "Lint"
+      script: npm run lint
+    - script: npm run test:coverage
+      name: "Test"
+
+stages:
+  - build
+  - test
