@@ -18,6 +18,8 @@ jobs:
       script: npm run lint
     - script: npm run test:coverage
       name: "Test"
+    - script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+      name: "Coverage"
 
 stages:
   - build
