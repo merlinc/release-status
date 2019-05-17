@@ -12,8 +12,6 @@ class Release extends React.Component {
       return null;
     }
 
-    console.log(this.props.release);
-
     return (
       <div
         id={"release-" + this.props.release.sha}
