@@ -8,6 +8,12 @@ It is an reworking of [UKHomeOffice/passport-ticket-status](https://github.com/U
 
 This particular repository is the SSR frontend.
 
+## Quality Metrics
+
+### Codescene
+
+[![](https://codescene.io/projects/4228/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/4228/jobs/latest-successful/results)
+
 ## Glossary
 
 - Ticket - A story task representing work to do
