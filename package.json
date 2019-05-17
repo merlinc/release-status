@@ -75,7 +75,7 @@
       "!**/*.spec.js"
     ],
     "coveragePathIgnorePatterns": [
-      "**/node_modules/**",
+      "node_modules/**",
       "coverage/**",
       "**/vendor/**",
       "*.conf.js",
