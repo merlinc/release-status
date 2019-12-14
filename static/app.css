@@ -156,22 +156,22 @@ a.update {
   border-color: black;
 }
 
-.tickets {
-  position: absolute;
-  top: 0px;
-  left: 135px;
-  right: 100px;
-}
+/*.tickets {*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  left: 135px;*/
+/*  right: 100px;*/
+/*}*/
 
-.ticket {
-  position: absolute;
-  padding: 5px;
-  border: solid 3px #444;
-  width: 160px;
-  overflow: hidden;
-  background-color: rgba(255, 0, 0, 0.7);
-  color: black;
-}
+/*.ticket {*/
+/*  position: absolute;*/
+/*  padding: 5px;*/
+/*  border: solid 3px #444;*/
+/*  width: 160px;*/
+/*  overflow: hidden;*/
+/*  background-color: rgba(255, 0, 0, 0.7);*/
+/*  color: black;*/
+/*}*/
 
 .parent {
   padding: 0 1px 0 1px;
@@ -181,47 +181,47 @@ a.update {
   margin: -2px -2px 0 4px;
   float: right;
 }
-.unknown {
-  background-color: rgba(255, 0, 0, 0.7);
-  color: white;
-}
-.nojira {
-  background-color: rgba(220, 255, 255, 0.7);
-}
-.ready {
-  background-color: rgba(200, 255, 200, 0.7);
-}
-.closed {
-  background-color: rgba(220, 220, 220, 0.7);
-}
-.develop {
-  background-color: rgba(255, 170, 180, 0.7);
-}
-.test {
-  background-color: rgba(190, 200, 255, 0.7);
-}
-.review {
-  background-color: rgba(220, 190, 255, 0.7);
-}
+/*.unknown {*/
+/*  background-color: rgba(255, 0, 0, 0.7);*/
+/*  color: white;*/
+/*}*/
+/*.nojira {*/
+/*  background-color: rgba(220, 255, 255, 0.7);*/
+/*}*/
+/*.ready {*/
+/*  background-color: rgba(200, 255, 200, 0.7);*/
+/*}*/
+/*.closed {*/
+/*  background-color: rgba(220, 220, 220, 0.7);*/
+/*}*/
+/*.develop {*/
+/*  background-color: rgba(255, 170, 180, 0.7);*/
+/*}*/
+/*.test {*/
+/*  background-color: rgba(190, 200, 255, 0.7);*/
+/*}*/
+/*.review {*/
+/*  background-color: rgba(220, 190, 255, 0.7);*/
+/*}*/
 
 .date {
   float: right;
   text-align: right;
   min-width: 80px;
 }
-.merge {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-right: 10px solid #444;
-  margin-left: -10px;
-  margin-top: 2px;
-}
-a.merge:hover {
-  border-right-color: #f44;
-}
+/*.merge {*/
+/*  position: absolute;*/
+/*  width: 0;*/
+/*  height: 0;*/
+/*  border-top: 12px solid transparent;*/
+/*  border-bottom: 12px solid transparent;*/
+/*  border-right: 10px solid #444;*/
+/*  margin-left: -10px;*/
+/*  margin-top: 2px;*/
+/*}*/
+/*a.merge:hover {*/
+/*  border-right-color: #f44;*/
+/*}*/
 
 /*.team {*/
 /*  display: inline;*/
