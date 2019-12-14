@@ -32,6 +32,15 @@ const JiraTicketWrapper = styled(TicketWrapper)`
   float: right;
 `;
 
+const ParentWrapper = styled.div`
+  padding: 0 1px 0 1px;
+  border: solid 1px #444;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: black;
+  margin: -2px -2px 0 4px;
+  float: right;
+`;
+
 class JiraTicket extends Ticket {
   render() {
     let ticket = this.props.ticket;
@@ -49,8 +58,6 @@ class JiraTicket extends Ticket {
       parentTitle = `${parent.key}\n\n${parent.title}\n\n[${parent.status}]`;
     }
 
-    const posCoords = this.buildStyle();
-
     return (
       <JiraTicketWrapper
         ticketType={this.className(ticket)}
@@ -63,18 +70,14 @@ class JiraTicket extends Ticket {
           {this.props.team && <Team team={this.props.team} />}
           <p>
             <a target={"ticket-" + ticket.id} href={ticket.link}>
-              {ticket.id} ({posCoords.top}/{posCoords.left}/{posCoords.right})
+              {ticket.id}
             </a>
             {parent ? (
-              <span
-                className={`parent ${this.className(parent)}`}
-                title={parentTitle}
-              >
+              <ParentWrapper title={parentTitle}>
                 <a target={`ticket-${parent.key}`} href={parent.link}>
-                  {parent.key} ({posCoords.top} / {posCoords.left} /
-                  {posCoords.right})
+                  {parent.key}
                 </a>
-              </span>
+              </ParentWrapper>
             ) : null}
           </p>
           <p>{ticket.title}</p>
