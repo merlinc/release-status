@@ -142,19 +142,19 @@ a.update {
 /*  border-color: #d00;*/
 /*}*/
 
-.release {
-  position: absolute;
-  left: 40px;
-  right: 50px;
-  padding: 5px;
-  border: solid 1px #ccc;
-  height: 16px;
-  overflow: hidden;
-  background-color: white;
-}
-.release:hover {
-  border-color: black;
-}
+/*.release {*/
+/*  position: absolute;*/
+/*  left: 40px;*/
+/*  right: 50px;*/
+/*  padding: 5px;*/
+/*  border: solid 1px #ccc;*/
+/*  height: 16px;*/
+/*  overflow: hidden;*/
+/*  background-color: white;*/
+/*}*/
+/*.release:hover {*/
+/*  border-color: black;*/
+/*}*/
 
 /*.tickets {*/
 /*  position: absolute;*/
@@ -204,11 +204,11 @@ a.update {
 /*  background-color: rgba(220, 190, 255, 0.7);*/
 /*}*/
 
-.date {
-  float: right;
-  text-align: right;
-  min-width: 80px;
-}
+/*.date {*/
+/*  float: right;*/
+/*  text-align: right;*/
+/*  min-width: 80px;*/
+/*}*/
 /*.merge {*/
 /*  position: absolute;*/
 /*  width: 0;*/

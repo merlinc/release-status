@@ -1,7 +1,29 @@
 import React from "react";
 import Build from "./build";
 import utils from "../lib/release-status-utils";
+import styled from "styled-components";
 
+const DateWrapper = styled.div`
+  float: right;
+  text-align: right;
+  min-width: 80px;
+`;
+
+const ReleaseWrapper = styled.div`
+  position: absolute;
+  left: 40px;
+  right: 50px;
+  padding: 5px;
+  border: solid 1px #ccc;
+  height: 16px;
+  overflow: hidden;
+  background-color: white;
+
+&:hover {
+  border-color: black;
+}
+}
+`;
 class Release extends React.Component {
   render() {
     let style = {
@@ -13,11 +35,7 @@ class Release extends React.Component {
     }
 
     return (
-      <div
-        id={"release-" + this.props.release.sha}
-        className={"release"}
-        style={style}
-      >
+      <ReleaseWrapper id={"release-" + this.props.release.sha} style={style}>
         <a
           title={this.props.release.ids && this.props.release.ids.join(" ")}
           href={this.props.release.url}
@@ -27,7 +45,7 @@ class Release extends React.Component {
 
         <span> {utils.shortMessage(this.props.release.message)} </span>
         <div style={{ display: "none" }}>{this.props.release.message}</div>
-        <span className="date">{this.props.release.date}</span>
+        <DateWrapper>{this.props.release.date}</DateWrapper>
 
         {/* New style batched builds with promotions*/}
         {this.props.release.builds &&
@@ -47,7 +65,7 @@ class Release extends React.Component {
         {this.props.release.promotions && (
           <Build promotions={this.props.release.promotions} />
         )}
-      </div>
+      </ReleaseWrapper>
     );
   }
 }
