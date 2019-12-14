@@ -80,33 +80,33 @@ a.update {
   background-color: rgba(220, 220, 220, 0.7);
 }
 
-.build {
-  display: inline;
-  float: right;
-  font-size: 12px;
-  font-weight: bold;
-  padding-top: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
-  border: solid 1px #666;
-  margin-top: -4px;
-  margin-right: 5px;
-  min-height: 18px;
-  background-color: white;
-  color: #666;
-}
-.build.success {
-  border: solid 1px #444;
-  background-color: #eee;
-  color: black;
-}
-.build:hover {
-  border-color: black;
-}
+/*.build {*/
+/*  display: inline;*/
+/*  float: right;*/
+/*  font-size: 12px;*/
+/*  font-weight: bold;*/
+/*  padding-top: 4px;*/
+/*  padding-left: 4px;*/
+/*  padding-right: 4px;*/
+/*  border: solid 1px #666;*/
+/*  margin-top: -4px;*/
+/*  margin-right: 5px;*/
+/*  min-height: 18px;*/
+/*  background-color: white;*/
+/*  color: #666;*/
+/*}*/
+/*.build.success {*/
+/*  border: solid 1px #444;*/
+/*  background-color: #eee;*/
+/*  color: black;*/
+/*}*/
+/*.build:hover {*/
+/*  border-color: black;*/
+/*}*/
 
-.build a {
-  float: right;
-}
+/*.build a {*/
+/*  float: right;*/
+/*}*/
 
 /*.env {*/
 /*  display: inline;*/
