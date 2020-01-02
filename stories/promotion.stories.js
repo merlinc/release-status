@@ -24,4 +24,6 @@ storiesOf("Promotion", module)
     </div>
   ))
   .add("promote", () => <Promotion promotion={{ ...promotion }} />)
-  .add("rough", () => <Promotion promotion={{ ...promotion, rough: true }} />);
+  .add("rough", () => (
+    <Promotion promotion={{ ...promotion, env: "rough", rough: true }} />
+  ));

@@ -4,6 +4,14 @@ import Merges from "./merges";
 import JiraTicket from "./jira-ticket";
 import CommitTicket from "./commit-ticket";
 import UpdatesTicket from "./updates-ticket";
+import styled from "styled-components";
+
+const TicketsWrapper = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 135px;
+  right: 100px;
+`;
 
 class Tickets extends React.Component {
   areCellsAvailable(cells, x, y, yLast) {
@@ -61,7 +69,7 @@ class Tickets extends React.Component {
     const cells = [];
 
     return (
-      <div className="tickets">
+      <TicketsWrapper>
         {tickets.map(ticket => {
           const TicketType =
             ticket.status === "NOJIRA" ? CommitTicket : JiraTicket;
@@ -100,7 +108,7 @@ class Tickets extends React.Component {
         {/*    />*/}
         {/*  );*/}
         {/*})}*/}
-      </div>
+      </TicketsWrapper>
     );
   }
 }

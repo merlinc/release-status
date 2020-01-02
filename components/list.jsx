@@ -6,6 +6,21 @@ const { compose } = require("recompose");
 import gql from "graphql-tag";
 
 import Layout from "./layout";
+import styled from "styled-components";
+
+const ProjectListWrapper = styled.div`
+  font-size: 1.5em;
+  line-height: 2em;
+  margin: 100px;
+`;
+
+const HeaderWrapper = styled.div`
+  font-weight: bold;
+  font-size: 30px;
+  position: absolute;
+  top: 1px;
+  margin-left: 30%;
+`;
 
 const displayLink = project => {
   const url = `/project?org=${project.org}&project=${project.project}`;
@@ -45,9 +60,9 @@ class List extends React.Component {
 
           return (
             <Layout title="Project List">
-              <div>
-                <p className="header">Project List</p>
-              </div>
+              <HeaderWrapper>
+                <p>Project List</p>
+              </HeaderWrapper>
               <ul className="projects">{data.list.map(displayLink)}</ul>
             </Layout>
           );
