@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 
 import React from "react";
 import StatusGrid from "./status-grid";
-
+import BreadCrumbs from "./bread-crumbs";
 export const projectStatus = gql`
   query status($org: String!, $project: String!) {
     status(org: $org, project: $project) {
@@ -46,10 +46,7 @@ class Main extends React.Component {
 
           return (
             <div>
-              <a className="header" href="/">
-                {data.status.project}
-              </a>
-
+              <BreadCrumbs org={this.props.org} project={this.props.project} />
               <StatusGrid
                 commits={data.status.commits}
                 tickets={this.props.showTickets && data.status.tickets}
