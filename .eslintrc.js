@@ -21,6 +21,13 @@ module.exports = {
       {
         devDependencies: [".storybook/**", "stories/**"]
       }
+    ],
+    "react/static-property-placement": [2, "static public field"],
+    "react/jsx-props-no-spreading": [
+      2,
+      {
+        custom: "ignore"
+      }
     ]
   },
   parser: "babel-eslint",
