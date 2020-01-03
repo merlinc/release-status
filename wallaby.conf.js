@@ -16,7 +16,7 @@ module.exports = wallaby => ({
 
   compilers: {
     "**/*.js?": wallaby.compilers.babel({
-      babel: require("babel-core"),
+      babel: require("@babel/core"),
       presets: ["react-app"]
     })
   },
