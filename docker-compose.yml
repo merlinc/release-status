@@ -6,11 +6,11 @@ services:
       - "9000:9000"
     environment:
       - GRAPHQL_HOST=graphql
-      - GRAPHQL_PORT=8001
+      - GRAPHQL_PORT=9010
   graphql:
     build: ../release-status-graphql
     ports:
-      - "8001:8001"
+      - "9010:9010"
     volumes:
       - ${CONFIG_FILE}:/src/config/default.json
     links:

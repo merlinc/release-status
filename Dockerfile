@@ -16,7 +16,7 @@ RUN npm prune --production
 FROM node:9-alpine
 RUN apk add --update --no-cache curl
 RUN apk add --no-cache bash
-ENV PORT=8001
+ENV PORT=9000
 EXPOSE $PORT
 ENV DIR=/src
 WORKDIR $DIR
