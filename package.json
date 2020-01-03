@@ -18,7 +18,7 @@
   },
   "author": "",
   "dependencies": {
-    "@octokit/rest": "^15.18.1",
+    "@octokit/rest": "^16.0.0",
     "ajv": "^6.7.0",
     "apollo-boost": "^0.1.27",
     "apollo-client": "^2.4.12",
