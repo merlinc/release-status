@@ -68,6 +68,10 @@
       "!**/vendor/**",
       "!*.conf.js",
       "!.storybook/**"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
     ]
   }
 }
