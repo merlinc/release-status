@@ -67,7 +67,8 @@
       "!coverage/**",
       "!**/vendor/**",
       "!*.conf.js",
-      "!.storybook/**"
+      "!.storybook/**",
+      "!**/*.stories.js"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/.next/",
