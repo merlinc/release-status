@@ -1,5 +1,5 @@
 import React from "react";
-const utils = require("../lib/release-status-utils");
+import utils from "../lib/release-status-utils";
 import styled from "styled-components";
 
 const colors = {

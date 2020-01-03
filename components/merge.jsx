@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-const utils = require("../lib/release-status-utils");
+import utils from "../lib/release-status-utils";
 
 const MergeWrapper = styled.div`
   position: absolute;
