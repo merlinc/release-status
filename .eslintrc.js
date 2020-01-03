@@ -19,7 +19,7 @@ module.exports = {
     "import/no-extraneous-dependencies": [
       "error",
       {
-        devDependencies: [".storybook/**", "stories/**"]
+        devDependencies: [".storybook/**", "stories/**", "**/*.spec.js"]
       }
     ],
     "react/static-property-placement": [2, "static public field"],
