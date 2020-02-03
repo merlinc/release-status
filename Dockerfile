@@ -13,7 +13,7 @@ RUN npm run build
 RUN npm prune --production
 
 
-FROM node:9-alpine
+FROM node:10.18.1-alpine
 RUN apk add --update --no-cache curl
 RUN apk add --no-cache bash
 ENV PORT=9000
