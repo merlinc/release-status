@@ -1,0 +1,7 @@
+{
+  "graphql": {
+    "host": "GRAPHQL_PORT",
+    "path": "GRAPHQL_PATH",
+    "port": "GRAPHQL_PORT"
+  }
+}
