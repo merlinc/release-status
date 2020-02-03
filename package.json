@@ -14,7 +14,7 @@
     "storybook": "start-storybook -s ./static"
   },
   "engines": {
-    "node": "10"
+    "node": "10.18.1"
   },
   "author": "",
   "dependencies": {
