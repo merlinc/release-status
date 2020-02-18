@@ -52,7 +52,8 @@
     "jest": "25.1.0",
     "lodash": "4.17.15",
     "prettier": "1.19.1",
-    "pretty-quick": "2.0.1"
+    "pretty-quick": "2.0.1",
+    "react-test-renderer": "16.12.0"
   },
   "husky": {
     "hooks": {
@@ -74,6 +75,9 @@
     "testPathIgnorePatterns": [
       "<rootDir>/.next/",
       "<rootDir>/node_modules/"
+    ],
+    "testMatch": [
+      "**/?(*.)+(spec|test).[jt]s?(x)"
     ]
   }
 }
