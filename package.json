@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.7.7",
-    "@storybook/react": "5.2.8",
+    "@storybook/react": "5.3.13",
     "babel-eslint": "10.0.3",
     "babel-loader": "8.0.6",
     "coveralls": "3.0.9",
