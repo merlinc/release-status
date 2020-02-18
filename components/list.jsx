@@ -23,7 +23,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const displayLink = project => {
-  const url = `/project?org=${project.org}&project=${project.project}`;
+  const url = `/dashboard/${project.org}/${project.project}`;
   const key = `${project.org}\${project.project}`;
   return (
     <li key={key}>
