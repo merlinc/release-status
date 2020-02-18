@@ -25,7 +25,6 @@ const TicketWrapper = styled.div`
 
 const CommitTicketWrapper = styled(TicketWrapper)`
   background-color: ${props => {
-    console.log(props.ticketType);
     return colors[props.ticketType];
   }};
   color: ${props => (props.ticketType === "unknown" ? "white" : "black")};

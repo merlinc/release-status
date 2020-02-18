@@ -29,7 +29,6 @@ const EnvWrapper = styled.div`
   margin-left: -3px;
   margin-right: 5px;
   color: ${props => {
-    console.log(props);
     if (colors[props.env]) {
       return colors[props.env];
     }
