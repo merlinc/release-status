@@ -27,7 +27,7 @@ WORKDIR $DIR
 # COPY --from=build /src/lib lib
 # COPY --from=build /src/pages pages
 # COPY --from=build /src/routes routes
-# COPY --from=build /src/static static
+# COPY --from=build /src/public public
 # COPY --from=build /src/index.js index.js
 # COPY --from=build /src/.next .next
 
