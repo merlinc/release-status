@@ -6,7 +6,7 @@ class Layout extends React.Component {
       <html>
         <head>
           <title>{this.props.title} - Ticket Status</title>
-          <script src="/static/app.js" />
+          <script src="/app.js" />
         </head>
         <body>{this.props.children}</body>
       </html>
