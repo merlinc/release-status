@@ -2,7 +2,7 @@
 import React from "react";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
-import withApollo from "../lib/withApollo";
+import withApollo from "../lib/with-apollo";
 // import { getDataFromTree } from '@apollo/react-ssr';
 
 const QUERY = gql`

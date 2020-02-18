@@ -2,7 +2,7 @@ import React from "react";
 import gql from "graphql-tag";
 import StatusGrid from "./status-grid";
 import BreadCrumbs from "./bread-crumbs";
-import withApollo from "../lib/withApollo";
+import withApollo from "../lib/with-apollo";
 import { useQuery } from "@apollo/react-hooks";
 import { getDataFromTree } from "@apollo/react-ssr";
 

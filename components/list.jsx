@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { useQuery } from "@apollo/react-hooks";
 import { getDataFromTree } from "@apollo/react-ssr";
 
-import withApollo from "../lib/withApollo";
+import withApollo from "../lib/with-apollo";
 import Layout from "./layout";
 
 const ProjectListWrapper = styled.div`
