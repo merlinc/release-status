@@ -2,7 +2,7 @@ import React from "react";
 import gql from "graphql-tag";
 import StatusGrid from "./status-grid";
 import BreadCrumbs from "./bread-crumbs";
-import withApollo from "../lib/withApolloNew";
+import withApollo from "../lib/withApollo";
 import { useQuery } from "@apollo/react-hooks";
 import { getDataFromTree } from "@apollo/react-ssr";
 
@@ -34,7 +34,7 @@ export const QUERY = gql`
   }
 `;
 
-const Main = (props) => {
+const Main = props => {
   const { loading, error, data } = useQuery(QUERY, {
     variables: { org: props.org, project: props.project }
   });

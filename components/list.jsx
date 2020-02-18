@@ -2,10 +2,10 @@ import Link from "next/link";
 import React from "react";
 import gql from "graphql-tag";
 import styled from "styled-components";
-import { useQuery } from '@apollo/react-hooks';
-import { getDataFromTree } from '@apollo/react-ssr';
+import { useQuery } from "@apollo/react-hooks";
+import { getDataFromTree } from "@apollo/react-ssr";
 
-import withApollo from '../lib/withApolloNew';
+import withApollo from "../lib/withApollo";
 import Layout from "./layout";
 
 const ProjectListWrapper = styled.div`
@@ -52,21 +52,21 @@ const QUERY = gql`
 `;
 
 const List = () => {
-    const { loading, data } = useQuery(QUERY);
+  const { loading, data } = useQuery(QUERY);
 
-    if (loading || !data) {
-      return <h1>loading...</h1>;
-    }
-      if (loading) return "Loading...";
+  if (loading || !data) {
+    return <h1>loading...</h1>;
+  }
+  if (loading) return "Loading...";
 
-      return (
-          <Layout title="Project List">
-            <HeaderWrapper>
-              <p>Project List</p>
-            </HeaderWrapper>
-            <ul className="projects">{data.list.map(displayLink)}</ul>
-          </Layout>
-      );
+  return (
+    <Layout title="Project List">
+      <HeaderWrapper>
+        <p>Project List</p>
+      </HeaderWrapper>
+      <ul className="projects">{data.list.map(displayLink)}</ul>
+    </Layout>
+  );
 };
 
 export default withApollo(List, { getDataFromTree });
