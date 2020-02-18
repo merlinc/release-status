@@ -24,9 +24,9 @@ const HeaderWrapper = styled.div`
 
 const displayLink = project => {
   const url = `/project?org=${project.org}&project=${project.project}`;
-
+  const key = `${project.org}\${project.project}`;
   return (
-    <li key={project.id}>
+    <li key={key}>
       <Link href={url}>
         <a>
           {project.org}\<i>{project.project}</i>
