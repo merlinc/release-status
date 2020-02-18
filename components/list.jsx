@@ -1,12 +1,12 @@
 import Link from "next/link";
-
 import React from "react";
-const { graphql, Query } = require("react-apollo");
-const { compose } = require("recompose");
 import gql from "graphql-tag";
-
-import Layout from "./layout";
 import styled from "styled-components";
+import { useQuery } from "@apollo/react-hooks";
+import { getDataFromTree } from "@apollo/react-ssr";
+
+import withApollo from "../lib/with-apollo";
+import Layout from "./layout";
 
 const ProjectListWrapper = styled.div`
   font-size: 1.5em;
@@ -35,41 +35,38 @@ const displayLink = project => {
     </li>
   );
 };
-class List extends React.Component {
-  render() {
-    const projectConfig = gql`
-      {
-        list {
-          org
-          project
-          type
-          git {
-            baseUrl
-            commitUrl
-            compareUrl
-          }
-        }
+
+const QUERY = gql`
+  {
+    list {
+      org
+      project
+      type
+      git {
+        baseUrl
+        commitUrl
+        compareUrl
       }
-    `;
-
-    return (
-      <Query query={projectConfig}>
-        {({ loading, error, data }) => {
-          if (loading) return "Loading...";
-          if (error) return `Error! ${error.message}`;
-
-          return (
-            <Layout title="Project List">
-              <HeaderWrapper>
-                <p>Project List</p>
-              </HeaderWrapper>
-              <ul className="projects">{data.list.map(displayLink)}</ul>
-            </Layout>
-          );
-        }}
-      </Query>
-    );
+    }
   }
-}
+`;
 
-export default List;
+const List = () => {
+  const { loading, data } = useQuery(QUERY);
+
+  if (loading || !data) {
+    return <h1>loading...</h1>;
+  }
+  if (loading) return "Loading...";
+
+  return (
+    <Layout title="Project List">
+      <HeaderWrapper>
+        <p>Project List</p>
+      </HeaderWrapper>
+      <ul className="projects">{data.list.map(displayLink)}</ul>
+    </Layout>
+  );
+};
+
+export default withApollo(List, { getDataFromTree });

@@ -6,7 +6,7 @@ module.exports = {
     "prettier",
     "plugin:react/recommended"
   ],
-  plugins: ["jest", "jsx-a11y", "react", "import"],
+  plugins: ["jest", "jsx-a11y", "react", "import", "react-hooks"],
   env: {
     node: true,
     jest: true,
@@ -28,7 +28,9 @@ module.exports = {
       {
         custom: "ignore"
       }
-    ]
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   parser: "babel-eslint",
   // "parser": "esprima",
