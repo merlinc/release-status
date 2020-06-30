@@ -1,4 +1,4 @@
-FROM node:10.19.0-alpine AS build
+FROM node:10.21.0-alpine AS build
 # install gyp tools
 RUN apk add --update --no-cache \
         python \
