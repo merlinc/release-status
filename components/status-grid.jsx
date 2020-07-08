@@ -31,7 +31,11 @@ class StatusGrid extends React.Component {
       <div>
         <ReleaseCandidates releases={this.props.commits} />
 
-        <Tickets tickets={this.props.tickets} commits={this.props.commits} />
+        <Tickets
+          tickets={this.props.tickets}
+          commits={this.props.commits}
+          config={this.props.config}
+        />
 
         {/*<Waterline commits={this.props.status.commits} />*/}
       </div>

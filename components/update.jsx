@@ -21,9 +21,7 @@ class Update extends React.Component {
     return (
       <UpdateWrapper>
         <a
-          href={`/${this.props.update.module}#release-${
-            this.props.update.version
-          }`}
+          href={`/${this.props.update.module}#release-${this.props.update.version}`}
           target={`module-${this.props.update.module}`}
         >
           ⟰ {this.props.update.module} {this.props.update.version}

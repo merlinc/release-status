@@ -1,17 +1,16 @@
 import React from "react";
 import Merge from "./merge";
 
-import _ from 'lodash';
+import _ from "lodash";
 
 class Merges extends React.Component {
   render() {
-
     const findCommitIndex = (commits, sha) => {
-      return _.findIndex(commits, {sha: sha});
+      return _.findIndex(commits, { sha: sha });
     };
 
-    if(!this.props.merges || !this.props.commits) {
-      return null
+    if (!this.props.merges || !this.props.commits) {
+      return null;
     }
     return (
       <div>
