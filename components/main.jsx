@@ -1,10 +1,10 @@
 import React from "react";
 import gql from "graphql-tag";
 import StatusGrid from "./status-grid";
-import BreadCrumbs from "./bread-crumbs";
 import withApollo from "../lib/with-apollo";
 import { useQuery } from "@apollo/react-hooks";
 import { getDataFromTree } from "@apollo/react-ssr";
+import Layout from "./layout";
 
 export const QUERY = gql`
   query status($org: String!, $project: String!) {
@@ -43,8 +43,8 @@ const Main = props => {
   if (error) return "Error...";
 
   return (
-    <div>
-      <BreadCrumbs org={props.org} project={props.project} />
+
+  <Layout title="Ticket Status" org={props.org} project={props.project}>
       <StatusGrid
         commits={data.status.commits}
         tickets={props.showTickets && data.status.tickets}
@@ -54,7 +54,7 @@ const Main = props => {
       {/*<StatusGrid commits={this.props.status.commits} tickets={this.props.status.tickets} releases={this.props.status.commits} updates={}/>*/}
 
       {/* <MoreLink options={this.props.options} /> */}
-    </div>
+  </Layout>
   );
 };
 
