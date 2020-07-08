@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./header";
 
 class Layout extends React.Component {
   render() {
@@ -8,7 +9,10 @@ class Layout extends React.Component {
           <title>{this.props.title} - Ticket Status</title>
           <script src="/app.js" />
         </head>
-        <body>{this.props.children}</body>
+        <body>
+          <Header org={this.props.org} project={this.props.project} />
+          {this.props.children}
+        </body>
       </html>
     );
   }
