@@ -4,7 +4,7 @@ module.exports = {
       name: "release-status-graphql",
       url: process.env.GRAPHQL
         ? process.env.GRAPHQL
-        : "http://localhost:8001/graphql"
+        : "http://localhost:9900/graphql"
     }
   }
 };
