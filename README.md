@@ -53,5 +53,5 @@ There are environment variables that need to be set, to point to the GraphQL ins
 
 ```
 - GRAPHQL_HOST=graphql
-- GRAPHQL_PORT=8001
+- GRAPHQL_PORT=9900
 ```
