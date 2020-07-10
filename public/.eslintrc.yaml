@@ -1,0 +1,11 @@
+root: false
+parserOptions:
+  ecmaVersion: 2020
+env:
+  node: false
+  browser: true
+  jest: true
+  mocha: true
+rules:
+  "func-names": "off"
+  "no-plusplus": "off"
