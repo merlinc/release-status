@@ -26,7 +26,7 @@
     "apollo-link-schema": "1.2.5",
     "graphql": "15.3.0",
     "graphql-tag": "2.10.4",
-    "graphql-tools": "6.0.12",
+    "graphql-tools": "6.2.6",
     "isomorphic-unfetch": "^3.0.0",
     "next": "9.4.4",
     "next-with-apollo": "5.1.0",
