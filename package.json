@@ -30,8 +30,8 @@
     "isomorphic-unfetch": "^3.0.0",
     "next": "9.4.4",
     "next-with-apollo": "5.1.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "styled-components": "5.1.1"
   },
   "devDependencies": {
@@ -48,7 +48,7 @@
     "eslint-plugin-jest": "23.18.0",
     "eslint-plugin-jsx-a11y": "6.3.1",
     "eslint-plugin-react": "7.20.3",
-    "eslint-plugin-react-hooks": "4.0.6",
+    "eslint-plugin-react-hooks": "4.6.0",
     "husky": "4.2.5",
     "jest": "26.1.0",
     "lodash": "4.17.19",
